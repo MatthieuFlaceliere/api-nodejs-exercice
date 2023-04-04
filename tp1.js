@@ -1,9 +1,25 @@
 // 1
+/**
+ * 
+ * @param {*} nb1 
+ * @param {*} nb2 
+ * @returns Retourne la somme de nb1 et nb2
+ */
 const somme = (nb1,nb2) => {
     return nb1 + nb2;
 }
 
+console.log("\nQ.1")
+console.log("Function : somme()")
+console.log("Input : 1, 2")
+console.log("Output : ", somme(1,2))
+
 // 2
+/**
+ * 
+ * @param {*} array Tableau d'entier
+ * @returns Retourne le plus grand élément du tableau
+ */
 const max = (array) => {
     let max = null;
     array.forEach(e => {
@@ -14,7 +30,17 @@ const max = (array) => {
     return max;
 }
 
+console.log("\nQ.2")
+console.log("Function : max()")
+console.log("Input : [1, 2, 3, 4, 5]")
+console.log("Output : ", max([1, 2, 3, 4, 5]))
+
 // 3
+/**
+ * 
+ * @param {*} input Chaine de caractère
+ * @returns Retourne la chaine de caractère sans les voyelles
+ */
 const deleteVoyelle = (input) => {
     const voyelles = ["a","e","i","o","u","y"];
     output = input;
@@ -27,14 +53,32 @@ const deleteVoyelle = (input) => {
     return output;
 }
 
+console.log("\nQ.3")
+console.log("Function : deleteVoyelle()")
+console.log("Input : 'Bonjour'")
+console.log("Output : ", deleteVoyelle("Bonjour"))
+
 // 4
+/**
+ * 
+ * @param {*} input Tableau de chaine de caractère
+ * @returns Retourne le tableau trié par ordre alphabétique
+ */
 const tri = (input) => {
     return input.sort()
 }
 
-console.log(tri(["AAA", "bbb", ]))
+console.log("\nQ.4")
+console.log("Function : tri()")
+console.log("Input : ['Bonjour', 'Arbre', 'Salut']")
+console.log("Output : ", tri(["Bonjour", "Arbre", "Salut"]))
 
 // 5
+/**
+ * 
+ * @param {*} number Entier compris entre 0 et 99
+ * @returns Retourne la chaine de caractère correspondant au nombre
+ */
 const numberToText = (number) => {
     const strNumber = number.toString()
     const dizaines = {
@@ -49,7 +93,7 @@ const numberToText = (number) => {
         "9" : "quatre-vingt-dix",
     }
     const chiffres = {
-        "0" : "",
+        "0" : "zero",
         "1" : "un",
         "2" : "deux",
         "3" : "trois",
@@ -83,8 +127,45 @@ const numberToText = (number) => {
         if (strNumber[0] === "1") {
             return special[strNumber[1]];
         }
+        if (strNumber[1] === "0") {
+            return dizaines[strNumber[0]];
+        }
         return dizaines[strNumber[0]] + " " + chiffres[strNumber[1]]; 
     }
 }
 
+console.log("\nQ.5")
+console.log("Function : numberToText()")
+console.log("Input : 12")
+console.log("Output : ", numberToText(12))
+
 // 6
+/**
+ * 
+ * @param {*} tab Tableau d'objet
+ * @param {*} prop Propriété à rechercher
+ * @returns Retourne un tableau contenant les valeurs de la propriété recherchée
+ */
+const findValue = (tab, prop) => {
+    let output = [];
+    tab.forEach(obj => {
+        if (obj[prop]) {
+            output.push(obj[prop])
+        }
+    });
+    return output
+}
+
+console.log("\nQ.6")
+console.log("Function : findValue()")
+console.log("Input : [{name : 'Dupont'}, {name : 'Jean', age : 10}], 'name'")
+console.log("Output : ", findValue([{name : 'Dupont'}, {name : 'Jean', age : 10}], 'name'))
+
+const triDecroissant = (tab) =>{
+    return tab.sort((a,b) => b - a)
+}
+
+console.log("\nQ.7")
+console.log("Function : triDecroissant()")
+console.log("Input : [1, 2, 3, 4, 5]")
+console.log("Output : ", triDecroissant([1, 2, 3, 4, 5]))
