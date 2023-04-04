@@ -35,6 +35,12 @@ console.log("Function : max()")
 console.log("Input : [1, 2, 3, 4, 5]")
 console.log("Output : ", max([1, 2, 3, 4, 5]))
 
+// Corection 2
+const maxArray = (array) => {
+    // ... spread operator
+    return Math.max(...array)
+}
+
 // 3
 /**
  * 
@@ -58,6 +64,12 @@ console.log("Function : deleteVoyelle()")
 console.log("Input : 'Bonjour'")
 console.log("Output : ", deleteVoyelle("Bonjour"))
 
+// Corection 3
+// Uilisation de la regex
+const deleteVoyelleRegex = (input) => {
+    return input.replace(/[aeiouy]/gi, '')
+}
+
 // 4
 /**
  * 
@@ -65,13 +77,13 @@ console.log("Output : ", deleteVoyelle("Bonjour"))
  * @returns Retourne le tableau trié par ordre alphabétique
  */
 const tri = (input) => {
-    return input.sort()
+    return input.sort((a,b) => a.localeCompare(b))
 }
 
 console.log("\nQ.4")
 console.log("Function : tri()")
-console.log("Input : ['Bonjour', 'Arbre', 'Salut']")
-console.log("Output : ", tri(["Bonjour", "Arbre", "Salut"]))
+console.log("Input : ['bonjour', 'Arbre', 'Salut']")
+console.log("Output : ", tri(["bonjour", "Arbre", "Salut"]))
 
 // 5
 /**
